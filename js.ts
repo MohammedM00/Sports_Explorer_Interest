@@ -1,0 +1,30 @@
+-	// Document ready function to ensure script runs after the page is fully loaded
+-	$(document).ready(function () {
+-	
+-	    // Sports data object containing information about various sports
+-	    const sportsData = {
+-	        football: {
+-	            description: "Football is a popular sport played worldwide...",
+-	            image: "football.jpg"
+-	        },
+-	        basketball: {
+-	            description: "Basketball is a fast-paced game played between two teams...",
+-	            image: "basketball.jpg"
+-	        },
+-	        // ... (similar entries for other sports)
+-	    };
+-	
+-	    // Event handler for sport buttons, triggered on click or mouseover
+-	    $(".sportButton").on("click mouseover", function () {
+-	
+-	        // Retrieve the data-sport attribute from the clicked button
+-	        const sport = $(this).data("sport");
+-	
+-	        // Fetch the corresponding data for the selected sport
+-	        const sportData = sportsData[sport];
+-	
+-	        // Update the sportInfo div with the selected sport's information and image
+-	        $("#sportInfo")
+-	            .html(`<h2 style="color: #3498db;">${sport}</h2><p>${sportData.description}</p><img id="sportImage" src="${sportData.image}" alt="Sport Image">`);
+-	    });
+-	});
